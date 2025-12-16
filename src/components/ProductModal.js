@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { formatPrice } from '../mockData';
 
 const ProductModal = ({ product, onClose }) => {
@@ -22,20 +22,20 @@ const ProductModal = ({ product, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative animate-fade-in"
+        className="bg-gray-900  rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors z-10"
+          className="absolute top-4 right-4 w-8 h-8 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center z-10 transition-colors border border-purple-800/30"
           aria-label="Закрыть"
         >
           <svg
-            className="w-6 h-6 text-gray-600"
+            className="w-4 h-4 text-purple-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ const ProductModal = ({ product, onClose }) => {
         </button>
 
         <div className="grid md:grid-cols-2 gap-6 p-6">
-          <div className="relative aspect-square rounded-lg overflow-hidden bg-gray-100">
+          <div className="relative aspect-square rounded-lg overflow-hidden bg-gray-800">
             <img
               src={product.image}
               alt={product.title}
@@ -60,21 +60,21 @@ const ProductModal = ({ product, onClose }) => {
 
           <div className="flex flex-col justify-between">
             <div>
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full mb-3">
+              <span className="inline-block px-3 py-1 bg-purple-900/50 text-purple-300 text-sm rounded-md mb-3">
                 {product.category}
               </span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-white mb-4">
                 {product.title}
               </h2>
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+              <p className="text-gray-300 text-base mb-6 leading-relaxed">
                 {product.description}
               </p>
-              <p className="text-4xl font-bold text-blue-600 mb-6">
+              <p className="text-3xl font-bold text-purple-300 mb-6">
                 {formatPrice(product.price)}
               </p>
             </div>
 
-            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 text-lg">
+            <button className="w-full bg-purple-700 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
               Купить
             </button>
           </div>

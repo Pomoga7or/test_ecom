@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import SearchBar from './components/SearchBar';
 import ProductCard from './components/ProductCard';
 import ProductModal from './components/ProductModal';
 import { fetchProducts } from './mockData';
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -25,26 +26,19 @@ function App() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
-            Интернет-магазин
-          </h1>
-          <SearchBar 
-            searchTerm={searchTerm} 
-            onSearchChange={setSearchTerm}
-            priceRange={priceRange}
-            onPriceRangeChange={setPriceRange}
-          />
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-black">
+      <Header />
+      <SearchBar
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+        priceRange={priceRange}
+        onPriceRangeChange={setPriceRange}
+      />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {loading ? (
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
-              <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
               <p className="text-gray-600 text-lg">Загрузка...</p>
             </div>
           </div>
@@ -69,7 +63,7 @@ function App() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-6">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
