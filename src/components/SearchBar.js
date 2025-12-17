@@ -1,6 +1,6 @@
 const SearchBar = ({ searchTerm, onSearchChange, priceRange, onPriceRangeChange }) => {
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="mx-4 sm:mx-auto sm:max-w-sm md:max-w-3xl lg:md:max-w-4xl">
       <div className="relative mb-6">
         <input
           type="text"

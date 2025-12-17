@@ -69,7 +69,7 @@ const ProductModal = ({ product, onClose }) => {
               <p className="text-gray-300 text-base mb-6 leading-relaxed">
                 {product.description}
               </p>
-              <p className="text-3xl font-bold text-purple-300 mb-6">
+              <p className="text-3xl font-bold text-purple-200 mb-6">
                 {formatPrice(product.price)}
               </p>
             </div>

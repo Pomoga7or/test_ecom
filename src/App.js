@@ -34,7 +34,7 @@ function App() {
         priceRange={priceRange}
         onPriceRangeChange={setPriceRange}
       />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-20">
         {loading ? (
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
@@ -43,7 +43,7 @@ function App() {
             </div>
           </div>
         ) : filteredProducts.length === 0 ? (
-          <div className="text-center py-16">
+          <div className="text-center py-16 ">
             <svg
               className="w-24 h-24 text-gray-300 mx-auto mb-4"
               fill="none"
