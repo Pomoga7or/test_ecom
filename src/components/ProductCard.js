@@ -12,7 +12,7 @@ const ProductCard = ({ product, onClick }) => {
           alt={product.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        {/* Легкое затемнение для контраста */}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>
       
@@ -37,7 +37,7 @@ const ProductCard = ({ product, onClick }) => {
         </div>
       </div>
       
-      {/* Тонкое свечение при наведении */}
+      
       <div className="absolute inset-0 rounded-xl " />
     </div>
   );
